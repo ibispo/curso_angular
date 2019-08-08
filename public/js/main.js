@@ -28,6 +28,12 @@ angular
             });            
 
         $routeProvider
+            .when('/fotos/edit/:fotoId', {
+                templateUrl: 'partials/foto.html',
+                controller: 'CadastroFotoController'
+            });            
+
+        $routeProvider
             .otherwise({redirectTo: '/fotos'});
 
 

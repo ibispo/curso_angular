@@ -58,4 +58,20 @@ angular.module('minhaDiretiva', [])
 
         return ddo;
 
+    })
+    .directive('meuBotaoPerigo', function() {
+      
+        var ddo = {};  
+      
+        ddo.restrict = "E";   // (E)lement
+
+        ddo.scope = {
+            nome: '@',  // String (Cópia de valor)
+            acao: '&'   // Passar expressão (referencia) a ser avaliada na diretiva. Ela quer chamar o "remover" do Controller
+        };
+
+        ddo.template = '<button ng-click="acao(foto);" class="btn btn-danger btn-block">{{nome}}</button>';
+
+        return ddo;
+
     });
