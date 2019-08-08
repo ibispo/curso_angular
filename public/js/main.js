@@ -1,6 +1,42 @@
 // Criando modulo principal da aplicacao
-angular.module('alurapic', []);
+angular
+    .module('alurapic', ['minhaDiretiva', 'ngAnimate', 'ngRoute'])
+    .config(function($routeProvider, $locationProvider) {
 
+        /*
+        Para habilitarmos o sistema de rotas no modo html5Mode 
+        sabemos que é necessária a diretiva <base href="/"> 
+        dentro da tag <head> da view principal da aplicação
+
+        Precisamos do artefato $locationProvider para 
+        habilitarmos o html5Mode. É através dele que 
+        habilitamos este modo.
+        */
+
+        $locationProvider.html5Mode(true);
+
+        $routeProvider
+            .when('/fotos', {
+                templateUrl: 'partials/principal.html',
+                controller: 'FotosController'
+            });
+
+        $routeProvider
+            .when('/fotos/new', {
+                templateUrl: 'partials/foto.html',
+                controller: 'CadastroFotoController'
+            });            
+
+        $routeProvider
+            .otherwise({redirectTo: '/fotos'});
+
+
+    }); 
+
+
+
+
+// A linha importar o módulo "ngAnimate" necessário para trabalhar com animações CSS.
 
 /*
 

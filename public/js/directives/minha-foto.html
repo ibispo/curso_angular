@@ -1,0 +1,16 @@
+<img class="img-responsive center-block" ng-src="{{url}}" alt="{{titulo}}">
+
+<!--
+A diretiva ng-src
+-----------------
+Muitas vezes, recebemos mensagens estranhas no console do 
+navegador, principalmente quando usamos uma AE para o 
+atributo src da tag img. Isso acontece porque o browser 
+tem uma política agressiva no carregamento de imagens 
+baixando-as antes que o Angular possa processar as AE. 
+
+Se isso incomodá-lo, você pode usar a diretiva ng-src 
+no lugar src. Com isso, apenas Angular processará a 
+diretiva, inclusive só depois da AE ter sido avaliada.
+
+-->

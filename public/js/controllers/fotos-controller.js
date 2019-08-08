@@ -2,6 +2,8 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
 
     $scope.fotoLista = [];
 
+    $scope.filtro = '';
+
     /* Versão antiga
     var promise = $http.get('v1/fotos');
     promise
