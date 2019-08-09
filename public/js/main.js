@@ -1,6 +1,6 @@
 // Criando modulo principal da aplicacao
 angular
-    .module('alurapic', ['minhaDiretiva', 'ngAnimate', 'ngRoute'])
+    .module('alurapic', ['minhaDiretiva', 'ngAnimate', 'ngRoute', 'meuServico'])
     .config(function($routeProvider, $locationProvider) {
 
         /*
