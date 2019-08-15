@@ -160,9 +160,11 @@ angular.module('minhaDiretiva', [])
             focado : '=' // Permite que qquer alteracao que minha diretiva faça, meu controller ficará sabendo
         };
 
-        ddo.link = function( escopo, elemento ) {
+        ddo.link = function( escopo, elemento, atributos ) {
 
             escopo.$watch('focado', function(newValue, oldValue) {
+
+                console.log(atributos);
 
                 console.log(
 `Element: ${elemento[0].name}
@@ -170,7 +172,7 @@ New: ${newValue}
 Old: ${oldValue}`
 );
 
-            });
+            }, true);
 
         };
 
